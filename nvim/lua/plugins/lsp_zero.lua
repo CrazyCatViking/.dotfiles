@@ -76,9 +76,10 @@ return {
           'tsserver',
           'eslint',
           'lua_ls',
-          'volar',
+          'volar@1.8.27',
           'graphql',
           'rust_analyzer',
+          'gopls',
         },
         handlers = {
           lsp_zero.default_setup,
