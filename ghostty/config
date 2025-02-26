@@ -1,0 +1,72 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/kristoffer/.config/ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+theme = catppuccin-mocha
+
+#custom-shader = ghostty-shaders/bloom.glsl
+#custom-shader = ghostty-shaders/in-game-crt.glsl
+#custom-shader = ghostty-shaders/glitchy.glsl
+#custom-shader = ghostty-shaders/fireworks-rockets.glsl
+#custom-shader = ghostty-shaders/bettercrt.glsl
+#custom-shader = ghostty-shaders/galaxy.glsl
+#custom-shader = ghostty-shaders/matrix-hallway.glsl
+#custom-shader = ghostty-shaders/inside-the-matrix.glsl
+#custom-shader = ghostty-shaders/negative.glsl
+#custom-shader = ghostty-shaders/glow-rgbsplit-twitchy.glsl
+#custom-shader = ghostty-shaders/gradient-background.glsl
+#custom-shader = ghostty-shaders/cineShader-Lava.glsl
+#custom-shader = ghostty-shaders/animated-gradient-shader.glsl
+#custom-shader = ghostty-shaders/dither.glsl
+#custom-shader = ghostty-shaders/cubes.glsl
+#custom-shader = ghostty-shaders/drunkard.glsl
+#custom-shader = ghostty-shaders/just-snow.glsl
+#custom-shader = ghostty-shaders/retro-terminal.glsl
+#custom-shader = ghostty-shaders/sin-interference.glsl
+#custom-shader = ghostty-shaders/smoke-and-ghost.glsl
+#custom-shader = ghostty-shaders/sparks-from-fire.glsl
+#custom-shader = ghostty-shaders/spotlight.glsl
+#custom-shader = ghostty-shaders/starfield-colors.glsl
+#custom-shader = ghostty-shaders/tft.glsl
+#custom-shader = ghostty-shaders/underwater.glsl
+#custom-shader = ghostty-shaders/water.glsl
