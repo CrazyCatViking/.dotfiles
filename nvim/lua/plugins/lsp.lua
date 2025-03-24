@@ -48,6 +48,8 @@ return {
     config = function()
       local lspconfig = require("mason-lspconfig")
 
+      vim.g.zig_fmt_autosave = 0
+
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
           local opts = { buffer = args.buf, remap = false }
@@ -73,7 +75,9 @@ return {
           'volar',
           'graphql',
           'rust_analyzer',
+          'zls',
         },
+
         handlers = {
           function(server_name)
             local capabilities = vim.lsp.protocol.make_client_capabilities()
