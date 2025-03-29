@@ -9,3 +9,4 @@ fi
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/zig
 export PATH=$PATH:~/.local/share/nvim/mason/bin
+export PATH=$PATH:~/.dotnet
