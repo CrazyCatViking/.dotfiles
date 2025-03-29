@@ -9,4 +9,6 @@ fi
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/zig
 export PATH=$PATH:~/.local/share/nvim/mason/bin
-export PATH=$PATH:~/.dotnet
+
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
