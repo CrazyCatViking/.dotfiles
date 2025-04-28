@@ -31,6 +31,11 @@ if [ -d ~/.config/ghostty ]; then
   rm -rf ~/.config/ghostty
 fi
 
+if [ -d ~/.config/zls.json]; then
+  rm -rf ~/.config/zls.json
+fi
+
 ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/tmux ~/.config/tmux
 ln -s ~/.dotfiles/ghostty ~/.config/ghostty
+ln -s ~/.dotfiles/zls.json ~/.config/zls.json
