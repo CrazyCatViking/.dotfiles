@@ -16,3 +16,6 @@ export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+#rust
+. "$HOME/.cargo/env"
