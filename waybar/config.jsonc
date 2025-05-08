@@ -7,15 +7,12 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
-        "sway/scratchpad"
+        "hyprland/workspaces",
+        "hyprland/scratchpad"
     ],
     "modules-center": [
-        "sway/window"
     ],
     "modules-right": [
-        "idle_inhibitor",
         "pulseaudio",
         "network",
         "power-profiles-daemon",
@@ -23,28 +20,15 @@
         "memory",
         "temperature",
         "backlight",
-        "sway/language",
         "battery",
         "clock",
         "tray"
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -54,10 +38,7 @@
             "unlocked": ""
         }
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
+    "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": ["", ""],
