@@ -4,8 +4,7 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    background-color: rgba(43, 48, 59, 0);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -107,9 +106,20 @@ button:hover {
     margin: 0 4px;
 }
 
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: rgba(43, 48, 59, 0.5);
+  margin: 5px;
+  padding: 5px;
+
+  border-radius: 4;
+  border: 1px solid black;
+}
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
