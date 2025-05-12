@@ -16,30 +16,22 @@
       "tray"
     ],
     "modules-right": [
-        "pulseaudio",
-        "network",
-        "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        "battery",
-        "custom/notification",
-        "custom/power"
+      "hyprland/language",
+      "pulseaudio",
+      "network",
+      "power-profiles-daemon",
+      "cpu",
+      "memory",
+      "temperature",
+      "backlight",
+      "battery",
+      "custom/notification",
+      "custom/power"
     ],
     "hyprland/workspaces": {
       "format": "{icon}",
       "on-scroll-up": "hyprctl dispatch workspace e+1",
       "on-scroll-down": "hyprctl dispatch workspace e-1"
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
     },
     "hyprland/scratchpad": {
         "format": "{icon} {count}",
@@ -47,6 +39,11 @@
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
+    },
+    "hyprland/language": {
+      "format": "{}",
+      "format-en": "EN",
+      "format-no": "NO"
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -205,7 +202,7 @@
       "menu": "on-click",
       "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
       "menu-actions": {
-        "shutdown": "shutdown",
+        "shutdown": "shutdown now",
         "reboot": "reboot",
         "suspend": "systemctl suspend",
         "hibernate": "systemctl hibernate"
