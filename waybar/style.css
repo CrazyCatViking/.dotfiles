@@ -324,3 +324,11 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+menu {
+  background-color: @base;
+}
+
+menuitem:hover {
+  background-color: @overlay0;
+}
