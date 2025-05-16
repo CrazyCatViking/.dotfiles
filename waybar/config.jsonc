@@ -19,19 +19,20 @@
       "hyprland/language",
       "pulseaudio",
       "network",
-      "power-profiles-daemon",
-      "cpu",
-      "memory",
-      "temperature",
       "backlight",
       "battery",
       "custom/notification",
       "custom/power"
     ],
     "hyprland/workspaces": {
+      "disable-scroll": true,
+      "sort-by-name": true,
       "format": "{icon}",
-      "on-scroll-up": "hyprctl dispatch workspace e+1",
-      "on-scroll-down": "hyprctl dispatch workspace e-1"
+      "format-icons": {
+        "default": "<span color='#cdd6f4'></span>",
+        "active": "<span color='#89b4fa'></span>",
+        "urgent": "<span color='#f38ba8'></span>"
+      }
     },
     "hyprland/scratchpad": {
         "format": "{icon} {count}",
