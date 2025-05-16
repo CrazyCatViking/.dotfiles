@@ -7,7 +7,11 @@
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: @base;
+
+    border-radius: 4;
+    border: 1px solid black;
+
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -54,7 +58,7 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: #a37800;
+    background-color: transparent;
 }
 
 #workspaces button {
@@ -83,7 +87,6 @@ button:hover {
 #disk,
 #temperature,
 #backlight,
-#network,
 #pulseaudio,
 #wireplumber,
 #custom-media,
@@ -93,6 +96,7 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #custom-notification,
+#custom-power,
 #mpd {
     padding: 0 10px;
     color: #ffffff;
@@ -103,12 +107,8 @@ button:hover {
 .modules-left,
 .modules-center,
 .modules-right {
-  background-color: @base;
-  margin: 10px 10px 0px 10px;
   padding: 5px;
-
-  border-radius: 4;
-  border: 1px solid black;
+  min-height: 30px;
 }
 
 .modules-left.empty,
@@ -118,7 +118,8 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: transparent;
+    color: @yellow
 }
 
 #battery {
@@ -190,16 +191,17 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
+    padding: 0 10px;
+    background-color: transparent;
+    color: @blue;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: transparent;
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    color: @maroon;
 }
 
 #pulseaudio.muted {
@@ -217,18 +219,12 @@ label:focus {
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
+    background-color: @surface0;
+    color: @text;
     min-width: 100px;
+    border-radius: 4px;
 }
 
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
 
 #temperature {
     background-color: #f0932b;
@@ -239,7 +235,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: transparent;
 }
 
 #tray > .passive {
@@ -278,8 +274,8 @@ label:focus {
 }
 
 #language {
-    background: #00b093;
-    color: #740864;
+    background: transparent;
+    color: @green;
     padding: 0 5px;
     min-width: 16px;
 }
