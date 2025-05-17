@@ -1,3 +1,7 @@
 @import "catppuccin-mocha"
 @theme "catppuccin-default"
 
+configuration {
+  show-icons: true;
+}
+
