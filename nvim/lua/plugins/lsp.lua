@@ -70,9 +70,8 @@ return {
       lspconfig.setup({
         ensure_installed = {
           'ts_ls',
-          'eslint',
           'lua_ls',
-          'volar',
+          'vue_ls',
           'graphql',
           'rust_analyzer',
           'zls',
