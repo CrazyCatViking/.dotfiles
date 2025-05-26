@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-vim.keymap.set('i', '<leader>a', 'copilot#Accept("\\<CR>")', {
+vim.keymap.set('i', '<M-a>', 'copilot#Accept("\\<CR>")', {
   expr = true,
   replace_keycodes = false
 })
