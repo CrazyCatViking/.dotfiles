@@ -1,11 +1,5 @@
 return {
   {
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      {'hrsh7th/cmp-nvim-lsp'},
-    }
-  },
-  {
     'hrsh7th/nvim-cmp',
     dependencies = {
       {'L3MON4D3/LuaSnip'},
@@ -37,68 +31,42 @@ return {
     end
   },
   {
-    'williamboman/mason.nvim',
+    "mason-org/mason-lspconfig.nvim",
+    opts = { handlers = { vim.lsp.enable } },
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      { "neovim/nvim-lspconfig" },
+      {
+        "mason-org/mason.nvim",
+        opts = {},
+        dependencies = { "roslyn.nvim" },
+      },
+    },
     config = function()
-      local mason = require("mason")
-      mason.setup()
-    end
-  },
-  {
-    'williamboman/mason-lspconfig.nvim',
-    config = function()
-      local lspconfig = require("mason-lspconfig")
+      local mason_lspconfig = require("mason-lspconfig")
 
-      vim.g.zig_fmt_autosave = 0
+      mason_lspconfig.setup()
 
-      vim.api.nvim_create_autocmd("LspAttach", {
-        callback = function(args)
-          local opts = { buffer = args.buf, remap = false }
-
-          vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-          vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-          vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-          vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-          vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-          vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-          vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-          vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-          vim.keymap.set("n", "<F2>", function() vim.lsp.buf.rename() end, opts)
-          vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-        end,
-      })
-
-      lspconfig.setup({
-        ensure_installed = {
-          'ts_ls',
-          'lua_ls',
-          'vue_ls',
-          'graphql',
-          'rust_analyzer',
-          'zls',
-        },
-
-        handlers = {
-          function(server_name)
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
-
-            if (server_name == 'volar') then
-              require('lspconfig')[server_name].setup({
-                init_options = {
-                  vue = {
-                    hybridMode = false
-                  },
-                },
-                capabilities = capabilities,
-              })
-            else
-              require('lspconfig')[server_name].setup({
-                capabilities = capabilities,
-              })
-            end
-          end
+      vim.lsp.config('ts_ls', {
+        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = vim.fs.joinpath(
+                vim.fn.stdpath("data"),
+                "mason",
+                "packages",
+                "vue-language-server",
+                "node_modules",
+                "@vue",
+                "language-server"
+              ),
+              languages = { "vue" },
+            },
+          },
         },
       })
     end
-  },
+  }
 }
