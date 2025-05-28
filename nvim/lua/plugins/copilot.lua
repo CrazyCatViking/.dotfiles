@@ -23,9 +23,9 @@ return {
         },
         ["copilot/claude-3.7"] = {
           __inherited_from = "copilot",
-          model = "claude-3.7",
+          model = "claude-3.7-sonnet",
           display_name = "copilot/claude-3.7",
-          max_tokens = 65536,
+          max_tokens = 100000,
         },
         ["copilot/claude-3.7-thought"] = {
           __inherited_from = "copilot",
