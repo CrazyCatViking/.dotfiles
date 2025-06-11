@@ -25,5 +25,8 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH:$HOME/flutter/bin"
 export ANDROID_HOME="$HOME/Android/Sdk"
 
+# supabase-cli
+export PATH="$PATH:$HOME/supabase-cli"
+
 # aliases
 alias fr="flutter run --dart-define-from-file=.env"
