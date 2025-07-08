@@ -5,59 +5,60 @@ return {
   version = false, -- Never set this value to "*"! Never!
   opts = {
     provider = "copilot",
-    copilot = {
-        model = "gpt-4.1",
-        endpoint = "https://api.githubcopilot.com",
-        allow_insecure = false,
-        timeout = 10 * 60 * 1000,
-        temperature = 0,
-        max_completion_tokens = 1000000,
-        reasoning_effort = "low",
-    },
-    vendors = {
-        ["copilot/claude-3.5"] = {
-          __inherited_from = "copilot",
-          model = "claude-3.5-sonnet",
-          display_name = "copilot/claude-3.5",
-          max_tokens = 65536,
+      providers = {
+        copilot = {
+          model = "gpt-4o",
+          endpoint = "https://api.githubcopilot.com",
+          allow_insecure = false,
+          timeout = 10 * 60 * 1000,
+          max_completion_tokens = 1000000,
+          reasoning_effort = "low",
         },
-        ["copilot/claude-3.7"] = {
-          __inherited_from = "copilot",
-          model = "claude-3.7-sonnet",
-          display_name = "copilot/claude-3.7",
-          max_tokens = 100000,
+        vendors = {
+          ["copilot/claude-3.5"] = {
+            __inherited_from = "copilot",
+            model = "claude-3.5-sonnet",
+            display_name = "copilot/claude-3.5",
+            max_tokens = 65536,
+          },
+          ["copilot/claude-3.7"] = {
+            __inherited_from = "copilot",
+            model = "claude-3.7-sonnet",
+            display_name = "copilot/claude-3.7",
+            max_tokens = 100000,
+          },
+          ["copilot/claude-3.7-thought"] = {
+            __inherited_from = "copilot",
+            model = "claude-3.7-sonnet-thought",
+            display_name = "copilot/claude-3.7-thought",
+            max_tokens = 65536,
+          },
+          ["copilot/o4-mini"] = {
+            __inherited_from = "copilot",
+            model = "o4-mini",
+            display_name = "copilot/o4-mini",
+            max_tokens = 100000,
+          },
+          ["copilot/gpt-4.1"] = {
+            __inherited_from = "copilot",
+            model = "gpt-4.1",
+            display_name = "copilot/gpt-4.1",
+            max_tokens = 32768,
+          },
+          ["copilot/gemini-2.0"] = {
+            __inherited_from = "copilot",
+            model = "gemini-2.0-flash-001",
+            display_name = "copilot/gemini-2.0-flash",
+            max_tokens = 8192,
+          },
+          ["copilot/gemini-2.5"] = {
+            __inherited_from = "copilot",
+            model = "gemini-2.5-pro",
+            display_name = "copilot/gemini-2.5-pro",
+            max_tokens = 65536,
+          },
         },
-        ["copilot/claude-3.7-thought"] = {
-          __inherited_from = "copilot",
-          model = "claude-3.7-sonnet-thought",
-          display_name = "copilot/claude-3.7-thought",
-          max_tokens = 65536,
-        },
-        ["copilot/o4-mini"] = {
-          __inherited_from = "copilot",
-          model = "o4-mini",
-          display_name = "copilot/o4-mini",
-          max_tokens = 100000,
-        },
-        ["copilot/gpt-4.1"] = {
-          __inherited_from = "copilot",
-          model = "gpt-4.1",
-          display_name = "copilot/gpt-4.1",
-          max_tokens = 32768,
-        },
-        ["copilot/gemini-2.0"] = {
-          __inherited_from = "copilot",
-          model = "gemini-2.0-flash-001",
-          display_name = "copilot/gemini-2.0-flash",
-          max_tokens = 8192,
-        },
-        ["copilot/gemini-2.5"] = {
-          __inherited_from = "copilot",
-          model = "gemini-2.5-pro",
-          display_name = "copilot/gemini-2.5-pro",
-          max_tokens = 65536,
-        },
-      }
+      },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",

@@ -5,6 +5,10 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
+if [ -f ~/.aider-env ]; then
+    . ~/.aider-env
+fi
+
 # User specific environment and startup programs
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/zig
