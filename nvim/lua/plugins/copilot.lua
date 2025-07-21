@@ -3,19 +3,7 @@ return {
   "yetone/avante.nvim",
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
-  opts = {
-      provider = "copilot",
-      providers = {
-        copilot = {
-          model = "gpt-4o",
-          endpoint = "https://api.githubcopilot.com",
-          allow_insecure = false,
-          timeout = 10 * 60 * 1000,
-          max_completion_tokens = 1000000,
-          reasoning_effort = "low",
-        },
-      },
-    },
+  opts = { provider = "copilot" },
   build = "make",
   dependencies = {
     "nvim-lua/plenary.nvim",
