@@ -4,7 +4,7 @@ return {
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
   opts = {
-    provider = "copilot",
+      provider = "copilot",
       providers = {
         copilot = {
           model = "gpt-4o",
@@ -14,64 +14,8 @@ return {
           max_completion_tokens = 1000000,
           reasoning_effort = "low",
         },
-        ["copilot/claude-3.5"] = {
-          __inherited_from = "copilot",
-          model = "claude-3.5-sonnet",
-          display_name = "copilot/claude-3.5",
-          extra_request_body = {
-            max_tokens = 65536,
-          }
-        },
-        ["copilot/claude-3.7"] = {
-          __inherited_from = "copilot",
-          model = "claude-3.7-sonnet",
-          display_name = "copilot/claude-3.7",
-          extra_request_body = {
-            max_tokens = 100000,
-          }
-        },
-        ["copilot/claude-3.7-thought"] = {
-          __inherited_from = "copilot",
-          model = "claude-3.7-sonnet-thought",
-          display_name = "copilot/claude-3.7-thought",
-          extra_request_body = {
-            max_tokens = 65536,
-          }
-        },
-        ["copilot/o4-mini"] = {
-          __inherited_from = "copilot",
-          model = "o4-mini",
-          display_name = "copilot/o4-mini",
-          extra_request_body = {
-            max_tokens = 100000,
-          }
-        },
-        ["copilot/gpt-4.1"] = {
-          __inherited_from = "copilot",
-          model = "gpt-4.1",
-          display_name = "copilot/gpt-4.1",
-          extra_request_body = {
-            max_tokens = 32768,
-          }
-        },
-        ["copilot/gemini-2.0"] = {
-          __inherited_from = "copilot",
-          model = "gemini-2.0-flash-001",
-          display_name = "copilot/gemini-2.0-flash",
-          extra_request_body = {
-            max_tokens = 8192,
-          }
-        },
-        ["copilot/gemini-2.5"] = {
-          __inherited_from = "copilot",
-          model = "gemini-2.5-pro",
-          display_name = "copilot/gemini-2.5-pro",
-          extra_request_body = {
-            max_tokens = 65536,
-          }
-        },
       },
-  },
+    },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
