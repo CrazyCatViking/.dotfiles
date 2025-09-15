@@ -18,5 +18,6 @@ return {
     { "<leader>gs", function() Snacks.picker.git_grep() end, desc = "Git Grep" },
     { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Log" },
     { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff" },
+    { "<leader>gg", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
   }
 }
