@@ -42,7 +42,7 @@
 # resize-overlay-duration = 4s 200ms
 
 font-family = FiraCode Nerd Font
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 
 #custom-shader = ghostty-shaders/bloom.glsl
 #custom-shader = ghostty-shaders/in-game-crt.glsl
