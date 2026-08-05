@@ -10,17 +10,14 @@ hl.monitor({
 
 local terminal = "ghostty"
 local fileManager = "nautilus"
-local menu = "rofi -show drun"
-local btMenu = "bzmenu -l rofi"
+local ipc = "noctalia msg "
 
 hl.on("hyprland.start", function()
     hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
     hl.exec_cmd('gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"')
-    hl.exec_cmd("swaync")
-    hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("waybar")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets,pkcs11,ssh")
+    hl.exec_cmd("noctalia")
 
     hl.dispatch(hl.dsp.focus({ workspace = "name:secondary" }))
     hl.dispatch(hl.dsp.focus({ workspace = 1 }))
@@ -120,6 +117,20 @@ hl.device({
 local mainMod = "SUPER"
 local altMod = "ALT"
 
+-- Noctalia IPC Commands
+hl.bind(mainMod .. "+ R", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
+hl.bind(mainMod .. "+ T", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+hl.bind(altMod .. "+ S", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
+hl.bind("SHIFT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
+
+-- Media keys
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"))
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"))
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
+
+-- Hyprland Commands
 hl.bind(mainMod .. " + " .. altMod .. " + S", hl.dsp.exec_cmd("grimblast copy area"))
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
@@ -127,9 +138,7 @@ hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exit())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("~/bosshell/bossmenu/zig-out/bin/bossmenu"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(btMenu))
+
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
@@ -191,4 +200,22 @@ hl.window_rule({
         pin = false,
     },
     no_focus = true,
+})
+
+-- Noctalia Settings
+hl.window_rule({
+    match = { class = "dev.noctalia.Noctalia" },
+    float = true,
+    size = { 1080, 920 },
+})
+
+hl.layer_rule({
+  name = "noctalia",
+  match = {
+    namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
+  },
+  no_anim = true,
+  ignore_alpha = 0.5,
+  blur = true,
+  blur_popups = true,
 })

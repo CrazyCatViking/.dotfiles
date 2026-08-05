@@ -1,0 +1,131 @@
+[bar]
+order = [ "Main" ]
+
+    [bar.Main]
+    center = [ "media" ]
+    concave_edge_corners = false
+    end = [
+        "tray",
+        "keyboard_layout",
+        "clipboard",
+        "network",
+        "bluetooth",
+        "volume",
+        "brightness",
+        "battery",
+        "clock",
+        "notifications",
+        "session"
+    ]
+    margin_edge = 10
+    margin_ends = 10
+    margin_opposite_edge = 2
+    radius = 5
+    start = [ "workspaces" ]
+    thickness = 40
+    widget_spacing = 8
+
+[location]
+address = "Alta, Norway"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 540.0
+    cy = 1738.0
+    output = "DP-2"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[shell.animation]
+speed = 1.5000000223517418
+
+[shell.panel]
+open_near_click_control_center = true
+open_near_click_session = true
+
+[shell.session]
+grid = true
+grid_columns = 2
+show_shortcuts = false
+
+[theme]
+community_palette = "Catppuccin Mocha Blue"
+mode = "dark"
+source = "community"
+wallpaper_scheme = "m3-content"
+
+[wallpaper.default]
+path = "/home/kristoffer/Pictures/Wallpapers/EPptkGFMvUVk1nm2TndbZGLiW0.jpg"
+
+[wallpaper.last]
+path = "/home/kristoffer/Pictures/Wallpapers/EPptkGFMvUVk1nm2TndbZGLiW0.jpg"
+
+[wallpaper.monitors.DP-1]
+path = "/home/kristoffer/Pictures/Wallpapers/EPptkGFMvUVk1nm2TndbZGLiW0.jpg"
+
+[wallpaper.monitors.DP-2]
+path = "/home/kristoffer/Pictures/Wallpapers/EPptkGFMvUVk1nm2TndbZGLiW0.jpg"
+
+[widget.audio_visualizer]
+show_when_idle = true
+
+[widget.media]
+capsule = true
+capsule_radius = 3
+hide_when_no_media = true
+
+[widget.workspaces]
+display = "name"
+max_label_chars = 9

@@ -47,8 +47,12 @@ if [ -d ~/.config/waybar ]; then
   rm -rf ~/.config/waybar
 fi
 
-if [ -d ~/.config/zls.json]; then
-  rm -rf ~/.config/zls.json
+if [ -L ~/.config/zls.json]; then
+  rm ~/.config/zls.json
+fi
+
+if [ -d ~/.config/noctalia ]; then
+  rm -rf ~/.config/noctalia
 fi
 
 ln -s ~/.dotfiles/nvim ~/.config/nvim
@@ -59,3 +63,4 @@ ln -s ~/.dotfiles/rofi ~/.config/rofi
 ln -s ~/.dotfiles/swaync ~/.config/swaync
 ln -s ~/.dotfiles/waybar ~/.config/waybar
 ln -s ~/.dotfiles/zls.json ~/.config/zls.json
+ln -s ~/.dotfiles/noctalia ~/.config/noctalia
