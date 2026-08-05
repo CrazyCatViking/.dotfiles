@@ -26,6 +26,9 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH:$HOME/flutter/bin"
 export ANDROID_HOME="$HOME/Android/Sdk"
 
+# nydus
+export PATH="$PATH:$HOME/nydus"
+
 # supabase-cli
 export PATH="$PATH:$HOME/supabase-cli"
 
