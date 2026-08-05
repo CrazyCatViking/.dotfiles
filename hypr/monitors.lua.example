@@ -1,0 +1,35 @@
+hl.on("hyprland.start", function()
+    hl.exec_cmd("~/.config/hypr/toggle_internal_display.sh")
+end)
+
+-- Home setup
+hl.monitor({
+    output = "desc:Samsung Electric Company LC32G7xT H4ZR400964",
+    mode = "2560x1440@144",
+    position = "0x0",
+    scale = 1,
+})
+
+hl.monitor({
+    output = "desc:Philips Consumer Electronics Company PHL 242G5 0x0000075D",
+    mode = "1920x1080@60",
+    position = "2560x-240",
+    scale = 1,
+    transform = 1,
+})
+
+-- Office setup
+hl.monitor({
+    output = "desc:Samsung Electric Company LC49G95T H4ZR800611",
+    mode = "5120x1440@60",
+    position = "0x0",
+    scale = 1,
+})
+
+hl.monitor({
+    output = "desc:AOC Q27P1B GNXKCHA122238",
+    mode = "2560x1440@60",
+    position = "5120x-240",
+    scale = 1,
+    transform = 1,
+})
