@@ -120,7 +120,6 @@ local altMod = "ALT"
 -- Noctalia IPC Commands
 hl.bind(mainMod .. "+ R", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. "+ T", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
-hl.bind(altMod .. "+ S", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 hl.bind(mainMod .. "+ L", hl.dsp.exec_cmd(ipc .. "session lock"))
 hl.bind("SHIFT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
 
@@ -132,7 +131,7 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
 -- Hyprland Commands
-hl.bind(mainMod .. " + " .. altMod .. " + S", hl.dsp.exec_cmd("grimblast copy area"))
+hl.bind(mainMod .. " + " .. altMod .. " + S", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
