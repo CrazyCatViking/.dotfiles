@@ -121,6 +121,7 @@ local altMod = "ALT"
 hl.bind(mainMod .. "+ R", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. "+ T", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
 hl.bind(altMod .. "+ S", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
+hl.bind(mainMod .. "+ L", hl.dsp.exec_cmd(ipc .. "session lock"))
 hl.bind("SHIFT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
 
 -- Media keys
@@ -140,7 +141,6 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 hl.bind(altMod .. " + H", hl.dsp.focus({ direction = "l" }))
 hl.bind(altMod .. " + L", hl.dsp.focus({ direction = "r" }))
