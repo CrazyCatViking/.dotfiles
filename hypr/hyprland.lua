@@ -121,7 +121,7 @@ local altMod = "ALT"
 hl.bind(mainMod .. "+ R", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. "+ T", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
 hl.bind(mainMod .. "+ L", hl.dsp.exec_cmd(ipc .. "session lock"))
-hl.bind("SHIFT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
+hl.bind(mainMod .. "+ Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
 
 -- Media keys
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"))
