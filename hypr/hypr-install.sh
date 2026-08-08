@@ -12,5 +12,4 @@ EOF
 
 echo -e "Installing hyprland and dependencies for fedora"
 
-dnf install hyprland hyprpaper hyprlock hyprpolkitagent waybar swaync rofi-wayland ghostty
-dnf install grimblast
+dnf install hyprland hyprpolkitagent ghostty

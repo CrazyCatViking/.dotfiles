@@ -81,10 +81,32 @@ hl.config({
         follow_mouse = 2,
         sensitivity = 0,
         touchpad = {
-            natural_scroll = false,
+            natural_scroll = true,
+            disable_while_typing = true,
+            tap_to_click = true,
+            tap_and_drag = true,
+            clickfinger_behavior = true,
         },
     },
+
+    gestures = {
+        workspace_swipe_distance = 250,
+        workspace_swipe_cancel_ratio = 0.35,
+        workspace_swipe_create_new = false,
+        workspace_swipe_direction_lock = true,
+    },
 })
+
+-- GNOME-like navigation without stealing two-finger gestures from applications.
+hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
+hl.gesture({
+    fingers = 3,
+    direction = "vertical",
+    action = function()
+        hl.exec_cmd(ipc .. "panel-toggle launcher")
+    end,
+})
+hl.gesture({ fingers = 4, direction = "pinch", action = "cursor_zoom", zoom_level = 1, mode = "live" })
 
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
