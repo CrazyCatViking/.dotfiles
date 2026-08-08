@@ -35,18 +35,6 @@ if [ -d ~/.config/hypr ]; then
   rm -rf ~/.config/hypr
 fi
 
-if [ -d ~/.config/rofi ]; then
-  rm -rf ~/.config/rofi
-fi
-
-if [ -d ~/.config/swaync ]; then
-  rm -rf ~/.config/swaync
-fi
-
-if [ -d ~/.config/waybar ]; then
-  rm -rf ~/.config/waybar
-fi
-
 if [ -L ~/.config/zls.json]; then
   rm ~/.config/zls.json
 fi
@@ -59,8 +47,5 @@ ln -s ~/.dotfiles/nvim ~/.config/nvim
 ln -s ~/.dotfiles/tmux ~/.config/tmux
 ln -s ~/.dotfiles/ghostty ~/.config/ghostty
 ln -s ~/.dotfiles/hypr ~/.config/hypr
-ln -s ~/.dotfiles/rofi ~/.config/rofi
-ln -s ~/.dotfiles/swaync ~/.config/swaync
-ln -s ~/.dotfiles/waybar ~/.config/waybar
 ln -s ~/.dotfiles/noctalia ~/.config/noctalia
 ln -s ~/.dotfiles/zls.json ~/.config/zls.json
