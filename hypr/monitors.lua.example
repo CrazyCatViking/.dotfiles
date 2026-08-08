@@ -1,5 +1,37 @@
-hl.on("hyprland.start", function()
-    hl.exec_cmd("~/.config/hypr/toggle_internal_display.sh")
+local internalMonitor = "eDP-1"
+
+local function hasExternalMonitor(removedMonitor)
+    for _, monitor in ipairs(hl.get_monitors()) do
+        if monitor.name ~= internalMonitor and monitor ~= removedMonitor then
+            return true
+        end
+    end
+
+    return false
+end
+
+local function configureInternalMonitor(disabled)
+    hl.monitor({
+        output = internalMonitor,
+        mode = "preferred",
+        position = "auto",
+        scale = 1,
+        disabled = disabled,
+    })
+end
+
+configureInternalMonitor(hasExternalMonitor())
+
+hl.on("monitor.added", function(monitor)
+    if monitor.name ~= internalMonitor then
+        configureInternalMonitor(true)
+    end
+end)
+
+hl.on("monitor.removed", function(monitor)
+    if monitor.name ~= internalMonitor then
+        configureInternalMonitor(hasExternalMonitor(monitor))
+    end
 end)
 
 -- Home setup
@@ -19,17 +51,26 @@ hl.monitor({
 })
 
 -- Office setup
+local officePrimary = "desc:Samsung Electric Company LC49G95T H4ZR800611"
+local officeSecondary = "desc:AOC Q27P1B GNXKCHA122238"
+
 hl.monitor({
-    output = "desc:Samsung Electric Company LC49G95T H4ZR800611",
+    output = officePrimary,
     mode = "5120x1440@60",
     position = "0x0",
     scale = 1,
 })
 
 hl.monitor({
-    output = "desc:AOC Q27P1B GNXKCHA122238",
+    output = officeSecondary,
     mode = "2560x1440@60",
     position = "5120x-240",
     scale = 1,
     transform = 1,
 })
+
+for workspace = 1, 10 do
+    hl.workspace_rule({ workspace = tostring(workspace), monitor = officePrimary })
+end
+
+hl.workspace_rule({ workspace = "name:secondary", monitor = officeSecondary })

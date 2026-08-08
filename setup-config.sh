@@ -62,5 +62,5 @@ ln -s ~/.dotfiles/hypr ~/.config/hypr
 ln -s ~/.dotfiles/rofi ~/.config/rofi
 ln -s ~/.dotfiles/swaync ~/.config/swaync
 ln -s ~/.dotfiles/waybar ~/.config/waybar
-ln -s ~/.dotfiles/zls.json ~/.config/zls.json
 ln -s ~/.dotfiles/noctalia ~/.config/noctalia
+ln -s ~/.dotfiles/zls.json ~/.config/zls.json

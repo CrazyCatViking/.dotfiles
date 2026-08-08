@@ -29,8 +29,14 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 # nydus
 export PATH="$PATH:$HOME/nydus"
 
+# smartdok-cli
+export PATH="$PATH":"$HOME/smartdok-cli/bin"
+
 # supabase-cli
 export PATH="$PATH:$HOME/supabase-cli"
 
 # aliases
 alias fr="flutter run --dart-define-from-file=.env"
+
+# go binaries
+export PATH="$PATH:$(go env GOPATH)/bin"
