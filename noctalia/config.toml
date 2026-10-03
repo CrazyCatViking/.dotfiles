@@ -127,5 +127,6 @@ capsule_radius = 3
 hide_when_no_media = true
 
 [widget.workspaces]
-display = "name"
+label_source = "name"
+show_labels=true
 max_label_chars = 9
